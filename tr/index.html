@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FS Dokuma — Denizli'de dokuma ve terbiye görmüş kumaş üretimi</title>
+<meta name="description" content="FS Dokuma, Denizli'de ham ve terbiye görmüş kumaş ile hazır ev tekstili ürünleri üretir — düz, ranforce, saten, müslin, gabardin, panama ve iplik boyalı; pamuk, keten, bambu, polyester ve karışımlarında. OEKO-TEX, GOTS, OCS, RCS ve GRS sertifikalı. Ev tekstili, kontrakt ve hastane kumaşları. Küçük ve orta ölçekli siparişler kabul edilir.">
+<link rel="alternate" hreflang="en" href="https://fsdokuma.com/">
+<link rel="alternate" hreflang="tr" href="https://fsdokuma.com/tr/">
+<link rel="alternate" hreflang="x-default" href="https://fsdokuma.com/">
+<link rel="canonical" href="https://fsdokuma.com/">
+<link rel="icon" href="../brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#4a453e;
+    --ink-faint:#7d766c;
+    --ecru:#f6f2ec;
+    --ecru-deep:#ebe4da;
+    --stone:#E7DFD4;
+    --taupe:#CFC4B4;
+    --line:#ddd4c7;
+    --accent:#6E6153;      /* deep taupe — buttons and focus states */
+    --accent-deep:#584D42;
+    --white:#fffdfa;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--ecru);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-weight:400;line-height:1.15;margin:0}
+  p{margin:0 0 1.1em}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;margin:0 0 18px
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,236,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;text-decoration:none}
+  .logo img{height:38px;width:auto}
+  @media(max-width:520px){.logo img{height:30px}}
+  .nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+  .nav a{text-decoration:none;font-size:14.5px;color:var(--ink-soft)}
+  .nav a:hover{color:var(--ink)}
+  .lang{display:flex;align-items:center;gap:9px;margin-left:28px;font-size:13.5px;letter-spacing:.06em}
+  .lang a{color:var(--ink-faint);text-decoration:none}
+  .lang a:hover{color:var(--ink)}
+  .lang .on{color:var(--ink);font-weight:600}
+  @media(max-width:880px){.lang{margin-left:auto;margin-right:18px}}
+
+  .menu-toggle{display:none;background:none;border:0;font-size:15px;cursor:pointer;color:var(--ink)}
+  @media(max-width:880px){
+    .nav ul{display:none}
+    .nav ul.open{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:70px;left:0;right:0;
+      background:var(--ecru);border-bottom:1px solid var(--line);padding:8px 28px 20px
+    }
+    .nav ul.open li{padding:10px 0;border-bottom:1px solid var(--line)}
+    .menu-toggle{display:block}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:0 0 76px;border-bottom:1px solid var(--line)}
+  .hero-photo{
+    width:100%;height:clamp(200px,34vh,360px);object-fit:cover;filter:saturate(.85)
+  }
+  .hero .wrap{padding-top:62px}
+  .hero h1{font-size:clamp(36px,5.2vw,62px);letter-spacing:-.01em}
+  .hero .lede{
+    font-size:clamp(18px,2vw,21px);color:var(--ink-soft);
+    max-width:56ch;margin-top:26px
+  }
+  .btn{
+    display:inline-block;padding:14px 28px;border-radius:2px;text-decoration:none;
+    font-size:15px;font-weight:500;transition:.15s
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-deep)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink-faint)}
+
+  /* ---------- figures ---------- */
+  .figures{background:var(--white);border-bottom:1px solid var(--line)}
+  .figures-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .fig{padding:38px 28px;border-right:1px solid var(--line)}
+  .fig:last-child{border-right:0}
+  .fig .n{font-family:'Fraunces',serif;font-size:34px;line-height:1.1;letter-spacing:-.01em}
+  .fig .l{font-size:13.5px;color:var(--ink-faint);margin-top:8px;line-height:1.45}
+  @media(max-width:880px){
+    .figures-grid{grid-template-columns:repeat(2,1fr)}
+    .fig:nth-child(2){border-right:0}
+    .fig:nth-child(1),.fig:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+  @media(max-width:460px){
+    .figures-grid{grid-template-columns:1fr}
+    .fig{border-right:0;border-bottom:1px solid var(--line)}
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0}
+  .section-head{max-width:62ch;margin-bottom:52px}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.015em}
+  .section-head p{margin-top:18px;color:var(--ink-soft);font-size:18px}
+  .section-head.label-only{margin-bottom:26px}
+  .section-head.label-only .eyebrow{margin-bottom:0}
+
+  .alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* ---------- product cards ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .tier{background:var(--ecru);padding:38px 32px}
+  .alt .tier{background:var(--white)}
+  .tier .num{
+    font-family:'Fraunces',serif;font-size:14px;color:var(--ink-faint);
+    letter-spacing:.1em;margin-bottom:20px
+  }
+  .tier h3{font-size:24px;margin-bottom:14px}
+  .tier p{color:var(--ink-soft);font-size:15.5px;margin-bottom:18px}
+  .tier ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .tier li{margin-bottom:6px}
+  .tier li strong{color:var(--ink);font-weight:600}
+  @media(max-width:880px){.tiers{grid-template-columns:1fr}}
+
+  /* ---------- split ---------- */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:40px}}
+  .split h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.015em;margin-bottom:20px}
+  .split p{color:var(--ink-soft)}
+
+
+  /* ---------- heritage ---------- */
+  .heritage{
+    background:var(--taupe);color:var(--ink-soft);
+    border-top:1px solid rgba(28,26,23,.10);border-bottom:1px solid rgba(28,26,23,.10)
+  }
+  .heritage .eyebrow{color:rgba(28,26,23,.5)}
+  .heritage h2{color:var(--ink);font-size:clamp(26px,3.4vw,38px);letter-spacing:-.015em;margin-bottom:20px}
+  .heritage .section-head{max-width:70ch}
+  .heritage .section-head p{color:var(--ink-soft)}
+  .heritage strong{color:var(--ink);font-weight:600}
+  .photo-band{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:8px}
+  .photo-band img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;filter:saturate(.85)}
+  .photo-caption{
+    font-size:13px;color:rgba(28,26,23,.5);margin-top:16px;
+    letter-spacing:.02em
+  }
+  @media(max-width:700px){.photo-band{grid-template-columns:1fr}}
+
+  /* ---------- certifications ---------- */
+  .certs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cert{background:var(--ecru);padding:30px 22px;text-align:center}
+  .alt .cert{background:var(--white)}
+  .cert .name{font-family:'Fraunces',serif;font-size:19px;margin-bottom:6px}
+  .cert .desc{font-size:13px;color:var(--ink-faint);line-height:1.45}
+  @media(max-width:880px){.certs{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.certs{grid-template-columns:1fr}}
+
+
+  /* ---------- berolige ---------- */
+  .brand-band{
+    background:var(--stone);color:var(--ink-soft);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+  }
+  .brand-band .eyebrow{color:rgba(28,26,23,.55)}
+  .brand-band p{color:var(--ink-soft)}
+  .brand-band a.btn-ghost{border-color:rgba(28,26,23,.35);color:var(--ink)}
+  .brand-band a.btn-ghost:hover{border-color:var(--ink)}
+
+  .brand-logo{margin:0 0 26px}
+  .brand-logo img{width:min(290px,72%);height:auto}
+  .brand-photos{display:grid;gap:10px}
+  .brand-photos img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+  .note{font-size:14px;color:var(--ink-faint);margin-top:18px}
+
+  /* ---------- contact ---------- */
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line)
+  }
+  .contact-item{background:var(--white);padding:34px 32px}
+  .contact-item span{
+    display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;color:var(--ink-faint);margin-bottom:12px
+  }
+  .contact-item .big{
+    font-family:'Fraunces',Georgia,serif;font-size:clamp(19px,2.1vw,24px);
+    color:var(--ink);text-decoration:none;letter-spacing:-.01em;word-break:break-word
+  }
+  .contact-item .big:hover{color:var(--accent)}
+  .contact-item p{margin:0;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
+  @media(max-width:880px){.contact-grid{grid-template-columns:1fr}}
+
+
+  /* ---------- footer ---------- */
+  footer{background:var(--stone);color:var(--ink-soft);padding:38px 0 26px;font-size:15px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+  footer h4{font-family:'Fraunces',serif;font-size:17px;color:var(--ink);margin:0 0 14px;font-weight:400}
+  footer a{color:var(--ink-soft);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+  footer ul{list-style:none;margin:0;padding:0}
+  footer li{margin-bottom:9px}
+  .foot-bottom{
+    margin-top:30px;padding-top:18px;border-top:1px solid rgba(28,26,23,.14);
+    font-size:13.5px;color:rgba(28,26,23,.5);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
+  }
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr;gap:34px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="FS Dokuma Tekstil">
+      <img src="../brand/logo.svg" alt="FS Dokuma Tekstil Sanayi ve Ticaret Limited Şirketi">
+    </a>
+    <ul id="menu">
+      <li><a href="#products">Ürünler</a></li>
+      <li><a href="#about">Hakkımızda</a></li>
+      <li><a href="#berolige">Berolige</a></li>
+      <li><a href="#certifications">Sertifikalar</a></li>
+      <li><a href="#contact">İletişim</a></li>
+    </ul>
+    <div class="lang"><a href="../">EN</a><span class="on">TR</span></div>
+    <button class="menu-toggle" aria-label="Menüyü aç/kapat" onclick="document.getElementById('menu').classList.toggle('open')">Menü</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-photo" src="../images/warp.jpg" alt="Dokuma tezgâhından geçen çözgü iplikleri" fetchpriority="high">
+    <div class="wrap">
+      <h1>FS Dokuma Tekstil</h1>
+      <p class="lede">
+        FS Dokuma, Türkiye ve yurt dışındaki perakendeciler, markalar ve üreticiler için
+        ham kumaş, mamül kumaş ve hazır ev tekstili ürünleri üretir.
+      </p>
+    </div>
+  </div>
+
+  <!-- FIGURES -->
+  <div class="figures">
+    <div class="wrap">
+      <div class="figures-grid">
+        <div class="fig">
+          <div class="n">2011</div>
+          <div class="l">1960'larda başlayan aile tekstil geleneğini sürdürerek Denizli'de kuruldu</div>
+        </div>
+        <div class="fig">
+          <div class="n">200.000 m</div>
+          <div class="l">Aylık üretim kapasitesi</div>
+        </div>
+        <div class="fig">
+          <div class="n">360 cm</div>
+          <div class="l">Dokuma kumaşta azami tarak eni</div>
+        </div>
+        <div class="fig">
+          <div class="n">10 pazar</div>
+          <div class="l">Avrupa ve Birleşik Krallık'ta ihracat pazarı</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ürünler</p>
+        <h2>Ne üretiyoruz</h2>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <div class="num">01</div>
+          <h3>Ham kumaşlar</h3>
+          <p>Üreticiler için ham dokuma kumaş.</p>
+          <ul>
+            <li>Düz, ranforce, saten, müslin, gabardin, panama, iplik boyalı ve talebinize göre özel konstrüksiyonlar</li>
+            <li>Pamuk, keten, bambu, polyester ve karışımları</li>
+            <li>Ev tekstili ve hastane tekstili için dokuma</li>
+            <li>360 cm tarak enine kadar</li>
+            <li>Yurt içi ve ihracat için tedarik</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="num">02</div>
+          <h3>Mamül kumaşlar</h3>
+          <p>Kesime ve konfeksiyona hazır bitmiş kumaş.</p>
+          <ul>
+            <li>Ağartılmış</li>
+            <li>İplik boyalı</li>
+            <li>Boyalı (overflow / pad batch)</li>
+            <li>Baskılı (reaktif / pigment)</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="num">03</div>
+          <h3>Hazır ürünler</h3>
+          <p>Talebinize göre dikilen ve paketlenen bitmiş ev tekstili ürünleri.</p>
+          <ul>
+            <li>Nevresim, düz çarşaf ve lastikli çarşaf</li>
+            <li>Yastık kılıfı</li>
+            <li>Müslin yatak örtüleri, pikeler ve şallar</li>
+            <li>Masa örtüleri</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEROLIGE -->
+  <section class="brand-band" id="berolige">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Kendi markamız</p>
+          <h2 class="brand-logo"><img src="../brand/berolige-dark.png" alt="Berolige"></h2>
+          <p>
+            2020 yılında kurulan Berolige markamız koleksiyonunda iplik boyalı şambre
+            nevresim takımları, müslin nevresim takımları ve müslin yatak örtüleri gibi
+            ürünler bulundurmaktadır.
+          </p>
+          <a class="btn btn-ghost" href="https://beroligehome.com" target="_blank" rel="noopener">beroligehome.com adresini ziyaret edin</a>
+        </div>
+        <div class="brand-photos">
+          <img src="../images/berolige-fold.jpg" alt="Yatağın üzerinde katlanmış çizgili nevresim" loading="lazy">
+          <img src="../images/berolige-detail.jpg" alt="Yıkamalı çizgili pamuklu nevresim üzerinde hindistan cevizi düğmeler" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section class="heritage" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Hakkımızda</p>
+        <h2>Denizli tekstilinde üç kuşak</h2>
+        <p>
+          FS Dokuma, 1960 yılından beri tekstil alanında faaliyet gösteren Sayın
+          ailesinin 3. kuşak temsilcisi tarafından 2011 yılında kurulmuştur.
+        </p>
+        <p>
+          Ayda 200.000 metreye kadar üretim yapıyor; yurt içindeki ve yurt dışındaki
+          üreticilere kumaş, Avrupa genelindeki online perakendecilere ve mağaza
+          zincirlerine bitmiş ev tekstili ürünleri tedarik ediyoruz. İhracat pazarlarımız
+          arasında <strong>Almanya, Birleşik Krallık, Bulgaristan, Hollanda, İtalya,
+          Romanya, Rusya, Slovenya, Ukrayna ve Yunanistan</strong> yer almaktadır.
+        </p>
+      </div>
+      <div class="photo-band">
+        <img src="../images/creel.jpg" alt="Çözgü cağlığında iplik bobinleri" loading="lazy">
+        <img src="../images/loom.jpg" alt="Üretim salonunda dokuma makinesi" loading="lazy">
+      </div>
+      <p class="photo-caption">FS Dokuma Ltd. arşivinden.</p>
+    </div>
+  </section>
+
+
+
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-head label-only">
+        <p class="eyebrow">Sertifikalar</p>
+      </div>
+      <div class="certs">
+        <div class="cert">
+          <div class="name">OEKO-TEX</div>
+          <div class="desc">Zararlı maddelere karşı test edilmiştir</div>
+        </div>
+        <div class="cert">
+          <div class="name">GOTS</div>
+          <div class="desc">Global Organic Textile Standard</div>
+        </div>
+        <div class="cert">
+          <div class="name">OCS</div>
+          <div class="desc">Organic Content Standard</div>
+        </div>
+        <div class="cert">
+          <div class="name">RCS</div>
+          <div class="desc">Recycled Claim Standard</div>
+        </div>
+        <div class="cert">
+          <div class="name">GRS</div>
+          <div class="desc">Global Recycled Standard</div>
+        </div>
+      </div>
+      <p class="note">Sertifikalar ve kapsam belgeleri talep üzerine paylaşılır.</p>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="alt" id="contact">
+    <div class="wrap">
+      <div class="section-head label-only">
+        <p class="eyebrow">İletişim</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>E-posta</span>
+          <a class="big" href="mailto:info@fsdokuma.com">info@fsdokuma.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Telefon</span>
+          <a class="big" href="tel:+905337130226">+90 533 713 02 26</a>
+        </div>
+        <div class="contact-item">
+          <span>Adres</span>
+          <p>
+            FS Dokuma Tekstil San. ve Tic. Ltd. Şti.<br>
+            Saraylar Mah. 367. Sok. No:17<br>
+            20100 Merkezefendi / Denizli
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="../brand/logo.svg" alt="FS Dokuma Tekstil" style="height:44px;width:auto;margin-bottom:16px">
+        <p style="margin:0;max-width:38ch">
+          Yurt içi ve yurt dışı müşteriler için Denizli'de üretilen dokuma ve mamül
+          kumaşlar ile hazır ev tekstili ürünleri.
+        </p>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li>FS Dokuma Tekstil Sanayi ve Ticaret Limited Şirketi</li>
+          <li>Saraylar Mah. 367. Sok. No:17</li>
+          <li>20100 Merkezefendi / Denizli</li>
+          <li><a href="mailto:info@fsdokuma.com">info@fsdokuma.com</a></li>
+          <li><a href="tel:+905337130226">+90 533 713 02 26</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Diğer</h4>
+        <ul>
+          <li><a href="#products">Ürünler</a></li>
+          <li><a href="#certifications">Sertifikalar</a></li>
+          <li><a href="https://beroligehome.com" target="_blank" rel="noopener">Berolige</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 FS Dokuma Tekstil Ltd. Şti. Tüm hakları saklıdır.</span>
+      <span>Denizli, Türkiye</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('#menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.getElementById('menu').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
